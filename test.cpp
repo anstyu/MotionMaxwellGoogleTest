@@ -1,6 +1,6 @@
 #include "pch.h"
 #include <filesystem>
-#include "../MotionMaxwellCPython/include/MotionMaxwellInterface.h"
+#include "MotionMaxwellInterface.h"
 
 #if defined _MSC_VER
 #include <windows.h>
