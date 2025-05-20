@@ -91,7 +91,9 @@ namespace MotionMaxwellTest {
     void SetUp() override {
 #ifdef _MSC_VER 
       //hInstLib = LoadLibrary(TEXT("D:\\repo3\\AnsysDev\\build_output\\64Debug\\MotionMaxwellCoupling.dll"));
-      SetDllDirectory(TEXT("D:/repo3/AnsysDev/build_output/64Debug/"));
+      fs::path libPath = fs::canonical("../../../build_output/64Debug/");
+      LPCTSTR strPath = libPath.c_str();
+      SetDllDirectory(strPath);
       hInstLib = LoadLibrary(TEXT("MotionMaxwellCoupling.dll"));
 #else
       hInstLib = dlopen("./lib/libMotionMaxwellCPython.so", RTLD_LAZY);
